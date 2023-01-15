@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Ticket Create Page</title>
+     <style>
+          form{margin: 25px; padding: 5px; box-shadow: 0px 0px 10px black; border-radius: 15px;}
+     </style>
+     {% include 'madgicalapp/cdnline.html' %}
+</head>
+<body>
+     <h1 class="text-center">Welcome To Madgical Techdom Technology..</h1>
+    <div class="container">
+     <div class="row">
+          <div class="offset-3 col-md-6">
+               <form method="POST">
+                    <h3 class="mt-2 text-center">Create Your Ticket Here..</h3>
+                    {% csrf_token %}
+                    <input type="text" name= 'number' class="form-control" placeholder="Enter Number">
+                    <input type="text" name= 'name' class="form-control" placeholder="Enter Name">
+                    <input type="text" name= 'description' class="form-control" placeholder="Enter Description">
+                    <input type="text" name= 'reporter' class="form-control" placeholder="Enter Report">
+                    <input type="text" name= 'status' class="form-control" placeholder="Enter Status">
+                    <input type="datetime-local" name= 'due_date' class="form-control" placeholder="Enter Date & Time">
+                    <center class="mt-2 mb-2">
+                         <input type="submit" value="Create" class="btn btn-sm btn-success">
+                         <input type="reset" value="Cancel" class="btn btn-sm btn-danger"><br>
+                         <a href="/madgicalapp/data" class="btn btn-sm btn-success mt-2">Check Your Ticket..</a>
+                    </center>
+               </form>
+          </div>
+     </div>
+    </div>
+</body>
+</html>

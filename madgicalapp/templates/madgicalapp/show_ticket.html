@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Ticket Showing Page</title>
+     {% include 'madgicalapp/cdnline.html' %}
+</head>
+<body>
+    <div class="container">
+     <div class="row">
+          <div class="col-md-12">
+               <h1 class="text-center"> All Data</h1>
+               <div class="text-right mb-5"> <a href="/madgicalapp/input" class="btn btn-success">Click Me For Create New Ticket</a></div>
+               {% if alldata %}
+               <table class="table table-bordered text-center">
+                    <thead class="bg-success text-white">
+                         <tr>
+                              <th>Number</th>
+                              <th>Name</th>
+                              <th>Description</th>
+                              <th>Reporter</th>
+                              <th>Status</th>
+                              <th>Due_Date</th>
+                         </tr>     
+                    </thead>
+                    <tbody class="bg-dark text-white">
+                         {% for i in alldata %}
+                         <tr>
+                              <td>{{i.number}}</td>
+                              <td>{{i.name}}</td>
+                              <td>{{i.description}}</td>
+                              <td>{{i.reporter}}</td>
+                              <td>{{i.status}}</td>
+                              <td>{{i.due_date}}</td>
+                         </tr>
+                         {% endfor %}
+                    </tbody>
+               </table>
+               {% else %}
+               <h1 class="text-center">..No Tickets Available Please Create Some Ticket..</h1>
+               {% endif %}
+          </div>
+     </div>
+    </div>
+</body>
+</html>
